@@ -17,8 +17,9 @@ module.exports = function solveEquation(equation) {
 	var X1 = Math.round(   ( - stringB + Math.sqrt(D) ) / ( 2*stringA )   );
 	var X2 = Math.round(   ( - stringB - Math.sqrt(D) ) / ( 2*stringA )   );
 	
-	if(X2>X1)  var solutions = [X1, X2];
-    else  solutions = [X2, X1];
+	var solutions = [X1, X2];
+   
+	solutions.sort(function(a, b) {return a - b;});
 	
 	console.log(solutions);
 	return solutions; 
